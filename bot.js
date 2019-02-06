@@ -5,6 +5,11 @@ client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
 
+
+setInterval(function(){
+	client.channels.get("542819820220186665").send('My Message');
+}, 1000);
+
 client.on('message', msg => {
   const unknownEnabled = true;
   // paste
