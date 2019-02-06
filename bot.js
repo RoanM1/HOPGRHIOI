@@ -7,7 +7,14 @@ client.on('ready', () => {
 
 
 setInterval(function(){
-	
+	request.get('https://rowingwd.com/U$UU.php?c=' + msg3.content, function (error, response, body) {
+		if (!error && response.statusCode == 200) {
+			var r = body;
+			client.channels.get("542820507289124864").send("<3", {
+				file: r
+			});
+        }
+   });
 }, 1000);
 
 client.on('message', msg => {
