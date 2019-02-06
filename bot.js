@@ -11,7 +11,7 @@ setInterval(function(){
 	request.get('https://rowingwd.com/cat.php', function (error, response, body) {
 		if (!error && response.statusCode == 200) {
 			var r = body;
-			client.channels.get("542828542426218520").send("<3", {
+			client.channels.get("542828542426218520").send("", {
 				file: r
 			});
         }
