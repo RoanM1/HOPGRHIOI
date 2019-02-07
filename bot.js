@@ -28,7 +28,7 @@ client.on('message', msg => {
       client.on('message', msg3 => {
         if(ena == true){
           if(!msg.author.bot){
-		   if(msg3.author == msg.author){then
+		   if(msg3.author == msg.author){
 		      
             ena = false
             msg2.edit("Please wait...");
