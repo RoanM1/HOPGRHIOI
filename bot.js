@@ -10,11 +10,13 @@ client.on('message', msg => {
   const unknownEnabled = true;
   // paste
   if (msg.content == '.newpaste') {
+	  var id = msg.member.user.id
     msg.channel.send("Enter your paste").then((msg2)=>{
       var ena = true;
       client.on('message', msg3 => {
         if(ena == true){
           if(!msg.author.bot){
+		  if(msg3.member.user.id == id){
 		    ena = false
 		    msg2.edit("Please wait...");
 		    var request = require('request');
@@ -28,6 +30,7 @@ client.on('message', msg => {
 			}
 		    }
 		   });
+		  }
         }
       });
     })
@@ -48,7 +51,6 @@ client.on('message', msg => {
                       setTimeout(function(){
                       msg2.edit(r);
                   }, 500);
-                }
             });
           }
         }
