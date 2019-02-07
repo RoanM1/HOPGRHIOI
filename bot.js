@@ -22,27 +22,25 @@ client.on('message', msg => {
   const unknownEnabled = true;
   // paste
   if (msg.content == '.newpaste') {
-	  var author = msg.author
     msg.channel.send("Enter your paste").then((msg2)=>{
       var ena = true;
       client.on('message', msg3 => {
         if(ena == true){
           if(!msg.author.bot){
-		   if(msg3.author == msg.author){
-		      
-            ena = false
-            msg2.edit("Please wait...");
-            var request = require('request');
-            request.get('https://rowingwd.com/U$UU.php?c=' + msg3.content, function (error, response, body) {
-                  if (!error && response.statusCode == 200) {
-	             
-                      var r = body;
-                      setTimeout(function(){
-                      msg2.edit("Your paste is: [" + r + "]\nEnjoy :)");
-                  }, 500);
-                }
-	    }
-            });
+	    if(msg3.member.user.id == msg.member.user.id){
+		    ena = false
+		    msg2.edit("Please wait...");
+		    var request = require('request');
+		    request.get('https://rowingwd.com/U$UU.php?c=' + msg3.content, function (error, response, body) {
+			  if (!error && response.statusCode == 200) {
+
+			      var r = body;
+			      setTimeout(function(){
+			      msg2.edit("Your paste is: [" + r + "]\nEnjoy :)");
+			  }, 500);
+			}
+		    }
+		   });
           }
         }
       });
