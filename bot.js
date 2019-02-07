@@ -2,10 +2,6 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const request = require('request');
 
-client.on('ready', () => {
-  console.log(`Logged in as ${client.user.tag}!`);
-});
-
 client.on('message', msg => {
   const unknownEnabled = true;
   // paste
@@ -28,9 +24,9 @@ client.on('message', msg => {
 			      msg2.edit("Your paste is: [" + r + "]\nEnjoy :)");
 			  }, 500);
 			}
-		    }
-		   });
+        });
 		  }
+        }
         }
       });
     })
@@ -51,6 +47,7 @@ client.on('message', msg => {
                       setTimeout(function(){
                       msg2.edit(r);
                   }, 500);
+                  }
             });
           }
         }
@@ -162,6 +159,8 @@ _ _`);
     }
   }
 });
+
+
 
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);
