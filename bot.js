@@ -27,7 +27,6 @@ client.on('message', msg => {
       client.on('message', msg3 => {
         if(ena == true){
           if(!msg.author.bot){
-	    if(msg3.member.user.id == msg.member.user.id){
 		    ena = false
 		    msg2.edit("Please wait...");
 		    var request = require('request');
@@ -41,7 +40,6 @@ client.on('message', msg => {
 			}
 		    }
 		   });
-          }
         }
       });
     })
