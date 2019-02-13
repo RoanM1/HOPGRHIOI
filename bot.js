@@ -73,8 +73,10 @@ client.on('message', msg => {
   }
   // purge
   if (msg.content.startsWith(".purge ")) {
+    if (msg.member.id == "370375320945295361" || msg.member.id == "234055367783350273" || msg.member.id == "489532401119264783"){
     msg.delete();
     msg.channel.bulkDelete(Number(msg.content.replace(".purge ", "")) + 1);
+  }
   }
   // cleardms
   if (msg.content == ".cleardms"){
