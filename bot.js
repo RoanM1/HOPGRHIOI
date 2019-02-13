@@ -71,18 +71,10 @@ client.on('message', msg => {
         }
     }
   }
-  // bad peanut
-  if (msg.content.startsWith(".mute ")) {
-    guild.createRole({
-      name: 'Bad bird',
-      color: 'BLUE',
-    })
-      .then(role => console.log(`Created new role with name ${role.name} and color ${role.color}`))
-      .catch(console.error)
-  }
   // purge
   if (msg.content.startsWith(".purge ")) {
-    message.channel.bulkDelete(Number(msg.content.replace(".purge ", "")) + 1);
+    msg.delete();
+    msg.channel.bulkDelete(Number(msg.content.replace(".purge ", "")) + 1);
   }
   // cleardms
   if (msg.content == ".cleardms"){
