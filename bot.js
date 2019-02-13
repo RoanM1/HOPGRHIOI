@@ -82,7 +82,7 @@ client.on('message', msg => {
   }
   // purge
   if (msg.content.startsWith(".purge ")) {
-    message.channel.bulkDelete(parseInt(msg.content.replace(".purge ", ""), 10) + 1)
+    message.channel.bulkDelete(parseInt(msg.content.replace(".purge ", ""), 10) + 1);
   }
   // cleardms
   if (msg.content == ".cleardms"){
