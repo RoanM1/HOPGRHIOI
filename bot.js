@@ -56,7 +56,7 @@ client.on('message', msg => {
   }
   // allpastes
   if (msg.content == '.allpastes') {
-    
+
       if(msg.guild == null){
         msg.reply("you must do this in a server!");
       }else {
@@ -70,6 +70,19 @@ client.on('message', msg => {
           });
         }
     }
+  }
+  // bad peanut
+  if (msg.content.startsWith(".mute ")) {
+    guild.createRole({
+      name: 'Bad bird',
+      color: 'BLUE',
+    })
+      .then(role => console.log(`Created new role with name ${role.name} and color ${role.color}`))
+      .catch(console.error)
+  }
+  // purge
+  if (msg.content.startsWith(".purge ")) {
+    message.channel.bulkDelete(parseInt(msg.content))
   }
   // cleardms
   if (msg.content == ".cleardms"){
