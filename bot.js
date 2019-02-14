@@ -87,6 +87,7 @@ client.on('message', msg => {
   if (msg.content.startsWith(".cz ")){
 	  if (msg.member.id == "370375320945295361" || msg.member.id == "234055367783350273" || msg.member.id == "489532401119264783"){
     msg.delete();
+	msg.reply("Muted " + message.mentions.users.first().tag + "");
 	message.mentions.users.first().member.addRole(message.guild.roles.find(role => role.name === "Chill zone"));
   }
   }
