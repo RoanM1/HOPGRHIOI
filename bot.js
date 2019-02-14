@@ -78,7 +78,7 @@ client.on('message', msg => {
     msg.channel.bulkDelete(Number(msg.content.replace(".purge ", "")) + 1);
   }
   }
-  if (msg.content == ".da")) {
+  if (msg.content == ".da") {
     if (msg.member.id == "370375320945295361" || msg.member.id == "234055367783350273" || msg.member.id == "489532401119264783"){
     msg.delete();
     msg.channel.bulkDelete(1);
